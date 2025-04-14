@@ -1,14 +1,16 @@
 import React, { use } from 'react';
-import Student from './Student';
+import FemaleStudent from './FemaleStudent';
 
-const StudentInfo = ({studentInfo}) => {
+const FemaleStu = ({studentInfo}) => {
+    
+    const totalStudnet = use(studentInfo);
+    const studentsData = totalStudnet.data;
 
-    const studentsData = use(studentInfo);
-
-    const StudentsInfo = studentsData.data;
+    const femaleStudents = studentsData.filter(maleStudent => maleStudent.gender === 'female');
+    console.log(femaleStudents);
 
     return (
-        <div className='px-3 md:px-10 pb-10'>
+        <div className='px-3 md:px-10 pb-10 bg-[url(https://i.ibb.co/sv4T4DBn/Ad-Dirasah-Online-Academy-Logo.jpg)] bg-cover bg-no-repeat'>
             <div className="overflow-x-auto outline outline-gray-300 rounded-2xl">
                 <table className="table">
                     {/* head */}
@@ -28,9 +30,9 @@ const StudentInfo = ({studentInfo}) => {
                     </thead>
                     <tbody>
 
-                       {
-                            StudentsInfo.map(student => <Student key={student.no} student={student}></Student>)
-                       }
+                        {
+                            femaleStudents.map(FeStudent => <FemaleStudent key={FeStudent.id} FeStudent={FeStudent}></FemaleStudent>)
+                        }
                                                 
                     </tbody>
                 </table>
@@ -39,4 +41,4 @@ const StudentInfo = ({studentInfo}) => {
     );
 };
 
-export default StudentInfo;
+export default FemaleStu;

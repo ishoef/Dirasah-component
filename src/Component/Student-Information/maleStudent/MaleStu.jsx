@@ -1,11 +1,15 @@
 import React, { use } from 'react';
-import Student from './Student';
+import MaleStudent from './MaleStudent';
 
-const StudentInfo = ({studentInfo}) => {
+const MaleStu = ({studentInfo}) => {
 
-    const studentsData = use(studentInfo);
+    console.log(studentInfo);
 
-    const StudentsInfo = studentsData.data;
+    const totalStudnet = use(studentInfo);
+    const studentsData = totalStudnet.data;
+
+    const maleStudents = studentsData.filter(maleStudent => maleStudent.gender === 'male');
+    console.log(maleStudents);
 
     return (
         <div className='px-3 md:px-10 pb-10'>
@@ -28,9 +32,9 @@ const StudentInfo = ({studentInfo}) => {
                     </thead>
                     <tbody>
 
-                       {
-                            StudentsInfo.map(student => <Student key={student.no} student={student}></Student>)
-                       }
+                        {
+                            maleStudents.map(maleStudent => <MaleStudent key={maleStudent.id} maleStudent={maleStudent}></MaleStudent>)
+                        }
                                                 
                     </tbody>
                 </table>
@@ -39,4 +43,4 @@ const StudentInfo = ({studentInfo}) => {
     );
 };
 
-export default StudentInfo;
+export default MaleStu;
