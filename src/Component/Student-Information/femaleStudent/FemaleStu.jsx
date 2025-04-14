@@ -10,7 +10,7 @@ const FemaleStu = ({studentInfo}) => {
     console.log(femaleStudents);
 
     return (
-        <div className='px-3 md:px-10 pb-10 bg-[url(https://i.ibb.co/sv4T4DBn/Ad-Dirasah-Online-Academy-Logo.jpg)] bg-cover bg-no-repeat'>
+        <div className='px-3 md:px-10 pb-10'>
             <div className="overflow-x-auto outline outline-gray-300 rounded-2xl">
                 <table className="table">
                     {/* head */}

@@ -39,7 +39,7 @@ function App() {
       </Suspense>
 
 
-      <h1 className='text-center text-5xl mt-10 mb-10 font-bold bg-[#153151] text-amber-300 py-10'>Female Student</h1>
+      <h1 className='text-center text-5xl mt-10 mb-10 font-bold bg-[#153151] text-white py-10'>Female Student</h1>
       <Suspense fallback={
         <div className='ml-[50%] mt-[20%]'>
           <span className="loading loading-bars loading-xl"></span>
